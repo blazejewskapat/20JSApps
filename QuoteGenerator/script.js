@@ -34,7 +34,6 @@ function newQuote() {
     authorText.textContent = quote.author;
   }
   quoteText.textContent = quote.text;
-  showing();
 }
 
 // Get Quotes From Api
@@ -45,6 +44,7 @@ async function getQuotes() {
     const response = await fetch(apiUrl);
     apiQuotes = await response.json();
     newQuote();
+    showing();
   } catch (error) {
     console.log(error);
   }
